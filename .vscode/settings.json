@@ -1,0 +1,6 @@
+{
+    "graycat-sql-formatter.case.identifiers": "Uppercase",
+    "graycat-sql-formatter.case.lineComments": "Uppercase",
+    "graycat-sql-formatter.case.literals": "Uppercase",
+    "graycat-sql-formatter.case.stringValues": "Uppercase"
+}
