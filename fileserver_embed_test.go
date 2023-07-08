@@ -2,6 +2,7 @@ package golangweb
 
 import (
 	"embed"
+	"io/fs"
 	"net/http"
 	"testing"
 )
@@ -10,7 +11,13 @@ import (
 var folder1 embed.FS
 
 func TestFilServerGoEmbed(t *testing.T) {
-	fileserver := http.FileServer(http.FS(folder1))
+	webdirectory, error := fs.Sub(folder1, "folder1")
+
+	if error != nil {
+		panic(error)
+	}
+
+	fileserver := http.FileServer(http.FS(webdirectory))
 
 	mux := http.NewServeMux()
 	mux.Handle("/static/", http.StripPrefix("/static", fileserver)) // agar bisa membaca direktori dengan benar
@@ -19,7 +26,7 @@ func TestFilServerGoEmbed(t *testing.T) {
 		Addr:    "localhost:8081",
 		Handler: mux,
 	}
-	error := server.ListenAndServe()
+	error = server.ListenAndServe()
 	if error != nil {
 		panic(error)
 	}

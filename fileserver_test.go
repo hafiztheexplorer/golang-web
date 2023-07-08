@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestServerfile(t *testing.T) {
+func TestFileServer(t *testing.T) {
 	directory := http.Dir("./folder1")
 	fileserver := http.FileServer(directory)
 
