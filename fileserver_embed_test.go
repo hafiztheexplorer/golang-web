@@ -11,7 +11,7 @@ import (
 var folder1 embed.FS
 
 func TestFilServerGoEmbed(t *testing.T) {
-	webdirectory, error := fs.Sub(folder1, "folder1")
+	webdirectory, error := fs.Sub(folder1, "folder1") // agar tidak perlu ngetik subfolder name ke web search
 
 	if error != nil {
 		panic(error)
