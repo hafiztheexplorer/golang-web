@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Template With with Go</title>
+
+</head>
+<body>
+{{/* contoh komentar */}}
+<p>Data 1 : {{.Data1}}</p>
+{{with .Data2}} 
+<h3>ini adalah action di mana ada Data2: </h3>
+<p>yaitu menampilkan Data3, Data4 dan Data5</p>
+<p>Data 3 : {{.Data3}}</p>
+<p>Data 4 : {{.Data4}}</p>
+<p>Data 5 : {{.Data5}}</p>
+{{else}}
+<h3>ini adalah acton di mana tidak ada Data2: </h3>
+<p>tidak ada Data2</p>
+{{end}}
+</body>
+</html>
