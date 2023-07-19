@@ -1,5 +1,17 @@
-{{template "layoutheader.gohtml" .}}
+{{/* layout 1 */}}
+{{define "layoutkonten1"}}
+{{template "layoutheader" .}}
 
 <h1>Hello {{.Data2}}</h1>
 
-{{template "layoutfooter.gohtml"}}
+{{template "layoutfooter"}}
+{{end}}
+
+{{/* layout 2 */}}
+{{define "layoutkonten2"}}
+{{template "layoutheader" .}}
+
+<h1>Hello again {{.Data2}}</h1>
+
+{{template "layoutfooter"}}
+{{end}}

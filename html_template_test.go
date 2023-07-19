@@ -1,7 +1,6 @@
 package golangweb
 
 import (
-	"embed"
 	"fmt"
 	"html/template"
 	"io"
@@ -87,9 +86,6 @@ func TestTemplateFilesDirectory(t *testing.T) {
 /*================================================================
 Templating menggunakan files golang embed
 ================================================================*/
-
-//go:embed templates/*.gohtml
-var templatefile1 embed.FS
 
 func TemplateFilesEmbed(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFS(templatefile1, "templates/*.gohtml") // tinggal dibintang agar tidak pilih file lagi
